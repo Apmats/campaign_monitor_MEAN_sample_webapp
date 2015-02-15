@@ -1,0 +1,30 @@
+<section data-ng-controller="SubscribersController" data-ng-init="findOne()">
+	<div cg-busy="{promise:loadingIconPromise,message:'Loading',backdrop:false,templateUrl:'modules/subscribers/views/loading.client.view.html',delay:100,minDuration:300}" >
+	<div class="page-header" data-ng-hide="!subscriber.$resolved">
+		<h1 class="text-center">Subscriber: </br>{{subscriber.emailAddress}} </h1>
+		<h2 class="text-center">Details:</h4>
+
+		<p class="text-center">
+		<h4>Email address:</h4> {{subscriber.emailAddress}}
+		</p>
+		<p class="text-center">
+			<h4>Name:</h4> {{subscriber.emailAddress}}
+		</p>
+		<p class="text-center">
+		<h4>Date added:</h4> {{subscriber.date}}
+		</p>
+
+
+	<div class="pull-right">
+		<p>
+			<a class="btn btn-primary btn-lg" data-ng-show="(authentication.user)" href="#!/subscribers">Go back to subscribers</a>
+		</p>
+	</div>
+	<div class="pull-left" data-ng-show="(authentication.user)">
+		<a class="btn btn-primary btn-lg" data-ng-click="remove();">
+			Delete this subscriber&nbsp;<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+</div>
+</div>
+</section>

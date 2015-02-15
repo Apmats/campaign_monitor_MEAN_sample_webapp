@@ -1,0 +1,22 @@
+<section data-ng-controller="SubscribersController" data-ng-init="find()">
+    <div class="page-header text-center">
+        <h1>Subscribers</h1>
+    </div>
+    <div cg-busy="{promise:loadingIconPromise,message:'Loading',backdrop:false,templateUrl:'modules/subscribers/views/loading.client.view.html',delay:100,minDuration:300}"  class="list-group col-md-6 col-md-offset-3">
+        <a data-ng-repeat="subscriber in subscribers" data-ng-href="#!/subscribers/{{subscriber.EmailAddress}}" class="list-group-item">
+			<h4 class="list-group-item-heading" data-ng-bind="subscriber.EmailAddress"></h4>
+      <small class="list-group-item-text">
+        <span data-ng-bind="subscriber.Name"></span>
+      </small>
+        </a>
+    </div>
+
+    <div class="row">
+      <p>
+        <a class="btn btn-primary btn-lg col-md-6 col-md-offset-3" data-ng-show="(authentication.user)" href="#!/subscribers/create">Add a subscriber</a>
+      </p>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!subscribers.$resolved || subscribers.length">
+    	No Subscribers yet, why don't you <a href="/#!/subscribers/create">add one</a>?
+    </div>
+</section>
