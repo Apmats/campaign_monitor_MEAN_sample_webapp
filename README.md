@@ -20,7 +20,7 @@ $ sudo npm install -g grunt-cli
 
 
 ## Live Example
-Will be hosted on heroku soon.
+http://campaign-monitor-web-app.herokuapp.com/
 
 ## Credits
 Everything here is derived from the MEANjs project and the yeoman generator for that.
